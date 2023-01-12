@@ -7,7 +7,11 @@ int32_t main(){
     int ans=0;
     for(int i=0;i<n;i++){
         cin>>arr[i];
-        if(i>0&&arr[i]<arr[i-1])ans+=(arr[i-1]-arr[i]);
+    }
+    int m=arr[0];
+    for(int i=1;i<n;i++){
+        ans+=max(0LL,m-arr[i]);     
+        m=max(m,arr[i]);
     }
     cout<<ans;
 }
