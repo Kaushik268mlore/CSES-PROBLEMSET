@@ -1,4 +1,5 @@
 # add .vscode file to .gitignore
 .vscode/
 .cph/
+*.bin
 #add .cph to .gitignore
