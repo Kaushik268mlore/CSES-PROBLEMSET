@@ -10,6 +10,11 @@ void solve(){
     // cout<<s;
     // int l=0,r=n;
     // sort(arr.begin(),arr.end());
+    //really cool way to check all permutations ,
+    // i goes from 0 to 2^n -1 
+    // and in bit representation , the set bits represent the index we consider for the sum
+    // so in the next loop we check for the indices that are set in one of the above combinations while(j=0 to n)we see
+    // which of the bits are set and if its set we add it to the cs.
     int res=0;
     for(int i=0;i<1<<n;++i){
         int cs=0;
