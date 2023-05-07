@@ -3,6 +3,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 #define int long long
+typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>os;
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         // http://xorshift.di.unimi.it/splitmix64.c
