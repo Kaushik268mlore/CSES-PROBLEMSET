@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
 using namespace std;
+using namespace __gnu_pbds;
 #define int long long
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
