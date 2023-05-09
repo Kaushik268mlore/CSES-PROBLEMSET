@@ -31,8 +31,8 @@ void solve(){
     int n;
     cin>>n;
     vector<range> ranges(n);
-    vector<bool> contained(n);
-    vector<bool> contains(n);
+    vector<int> contained(n);
+    vector<int> contains(n);
     for(int i = 0; i < n; i++)
     {
         cin>>ranges[i].l;
@@ -44,14 +44,14 @@ void solve(){
     for(int i = 0; i < n; i++)
     {
         if(ranges[i].r <= maxEnd)// if the right is less than the local maximum, it is definitely contained , as we sorted with l1<l2 and r<local max, its definitely contained
-            contained[ranges[i].id] = true;
+            contained[ranges[i].id]++;
         maxEnd = max(maxEnd, ranges[i].r);
     }
     int minEnd = 1e9 + 1;
     for(int i = n-1; i >= 0; i--)
     {
         if(ranges[i].r >= minEnd)//
-            contains[ranges[i].id] = true;
+            contains[ranges[i].id]++;
         minEnd = min(minEnd, ranges[i].r);
     }
     for(int i = 0; i < n; i++)
