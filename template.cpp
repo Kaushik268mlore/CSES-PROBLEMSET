@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
-#include<ext/pb_ds/assoc_container.hpp>
+// #include<ext/pb_ds/assoc_container.hpp>
 using namespace std;
-using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 #define int long long
 // class ST{ //segment tree
 //     vector<int>seg;
