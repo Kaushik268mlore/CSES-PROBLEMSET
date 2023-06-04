@@ -1,8 +1,13 @@
-#include<bits/stdc++.h>
-// #include<ext/pb_ds/assoc_container.hpp>
+#include<bits/stdc++.h> 
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+ 
 using namespace std;
-// using namespace __gnu_pbds;
-#define int long long
+using namespace __gnu_pbds;
+template <typename T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+#define ln '\n'
+typedef long long ll;
 // class ST{ //segment tree
 //     vector<int>seg;
 //  public:
