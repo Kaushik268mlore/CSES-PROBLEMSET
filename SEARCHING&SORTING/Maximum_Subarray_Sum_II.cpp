@@ -63,25 +63,30 @@ typedef long long ll;
 // };
 // dang , amazing sliding window problem.... damn it!!!
 void solve(){
-    int n,a,b;cin>>n>>a>>b;
-    vector<int>arr(n+1);
-    for(int i=0;i<n;i++)cin>>arr[i];
-    for(int i=1;i<=n;i++){
-        arr[i]=arr[i]+arr[i-1];
+   int n,a,b;
+    cin>>n>>a>>b;
+    vector<int> arr(n);
+    vector <ll> acuSum(n+1);
+    for(int i=0;i<n;i++) {
+        cin>>arr[i];
+        acuSum[i+1]=acuSum[i]+arr[i];
     }
-    multiset<int>s;
-    int res=INT_MIN;
-    for(int i=0;i<=n;i++){
-        if(i>=a){
-            if(i>b){
-                auto it=s.find(arr[i-b-1]);
-                s.erase(it);
-            }
-            s.insert(arr[i-a]);
-            res=max(res,arr[i]-*s.begin());
+    multiset<ll> ms;
+    ll currMax=-1e18;
+    ll re=-1e18;
+    for (int i=0;i<=n;i++){
+        if (i>=a){
+            if (i>b) {
+                auto it=ms.find(acuSum[i-b-1]);
+               ms.erase(it);
+            } 
+            ms.insert(acuSum[i-a]);
+            
+            re=max(re,acuSum[i]-*ms.begin());
+            
         }
     }
-    cout<<res;
+    cout<<re<<'\n';
 }
 int32_t main(){
     ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
